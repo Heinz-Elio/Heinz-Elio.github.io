@@ -43,7 +43,7 @@
 	<h1>Simple to-do list</h1>
 	<textarea id='in' rows="3" placeholder="e.g. <content>,<category>;<content>,<category>"></textarea>
 	<br/>
-		<div1>
+	<div1>
 		<p>Category:</p>
 			<ol>
 			    <li>Assignment</li>
@@ -61,9 +61,9 @@
 	</ol>	
 </body>
 
-	<script>
+<script>
 		// write your Javascript here
-function add_clicked (){
+	function add_clicked (){
 	const content = document.getElementById("in").value.split(',');
 	const list_content = document.createElement("li");
 	const node = document.createTextNode(content[0]);
@@ -78,7 +78,7 @@ function add_clicked (){
 	}
 }
 
-function batch_clicked (){
+	function batch_clicked (){
     const content = document.getElementById("in").value.split(';');
     for (var c in content){
 	  	var single = content[c].split(',');
@@ -96,14 +96,14 @@ function batch_clicked (){
     }
 }
 
-var first_click = true;
-var pendingClick;
-function complete(){
+	var first_click = true;
+	var pendingClick;
+	function complete(){
 	clearTimeout(pendingClick);
   	pendingClick = setTimeout(com(this),2500);
 }
 
-function com(e){
+	function com(e){
     if(first_click == true){
 	    e.style.textDecoration = "line-through" ;
 	    first_click = false;
@@ -116,15 +116,15 @@ function com(e){
 	}
 }
   
-function clear(){
+	function clear(){
 	clearTimeout(pendingClick);
 	if(confirm("Delete?") == true){
 		document.getElementById("todo").removeChild(this);
     }
 }
 
-var display = true;
-function toggle_clicked (){
+	var display = true;
+	function toggle_clicked (){
 	const temp = document.querySelectorAll("[status='complete']");
     if(display == true){
         for (let i = 0; i < temp.length; i++) {
@@ -138,7 +138,7 @@ function toggle_clicked (){
         display = true;
     }
 }
-	</script>
+</script>
 </html>
 
 
